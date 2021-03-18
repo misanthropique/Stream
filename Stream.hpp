@@ -21,6 +21,9 @@ class Stream
 {
 	std::vector< Type > mDataSource;
 
+	// I've found a partial version that I'd done.
+	// Will need to parse through that and begin working
+	// on integrating and completing those into here
 public:
 	
 	using StreamReturnType = std::conditional< _Mutable, Stream&, Stream >::type;
@@ -129,7 +132,6 @@ public:
 			}
 			else
 			{
-				partitionedStreams[ partitionKey ].mDataSource.push_back( std::
 			}
 		}
 	}
@@ -139,4 +141,6 @@ public:
 	{
 		return std::move( initializer );
 	}
+
+	Stream& threads( size_t )
 };
